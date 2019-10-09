@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form method="post" action="doRegister.php">
+	<form method="post" action="doregister.php">
 		<table>
 			<tr>
 				<td>Name</td>
