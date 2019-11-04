@@ -1,0 +1,229 @@
+
+	body {
+		margin: 0;
+	}
+	.header{
+		width: 100%;
+		overflow: hidden;
+
+	}
+	th{
+		text-decoration-color: #FFFFFF
+	}
+	.main{
+		width: 100%;
+		overflow: hidden;
+		background-color: #EEFFFC
+	}
+	.footer{
+		width: 100%;
+		overflow: hidden;
+		background-color: #405887
+	}
+
+	.nava{
+		width:auto;
+		height:30px;
+		background-color: #3870A4
+	}
+	.nava ul{
+		position: relative;
+		padding-left: 20%;
+		margin:0;
+		list-style: none;
+		padding-left:auto;
+	}
+	.nava a{
+		text-decoration: none;
+		font-size: 25px;
+		color: #FFFFFF;
+		display:block;
+		line-height: 30px;
+		padding: 0 75px;
+	}
+	.nava a:hover{
+		color: red
+	}
+	.nava li{
+		float: left;
+		margin-right: 10px;
+	}
+	.nava li:hover{
+		background-color: #87E7EB;
+	}
+	.banner{
+		height: 170px
+	}
+	.Home{
+		background-color: #60BEFF;
+		width: 24% ;
+		float: left;
+		height: 170px;
+	}
+	.Home a{
+		position: relative;
+		text-decoration: none;
+		font-size: 70px;
+		top:20% ;
+		padding-left: 20%;
+	}
+	
+	.navb{
+		background-color: #D4F8F5;
+		width: 22% ;
+		float: left;
+		height: 580px;
+		margin-right: 0.5%;
+	}
+	.navb ul{
+		margin: 17px;
+		padding:0px;
+		list-style-type: none;
+	}
+	.navb li{
+		padding:15px;
+	}
+	.navb a{
+		text-decoration: none;
+		font-size: 30px;
+		line-height: 30px;
+		padding-left: 45px;
+	}
+	.navb a:visited{
+		color: #2683E2
+	}
+	.navb a:active{
+		color: #0030FF
+	}
+	.navb a:link{
+			color: red
+	}
+	.navb li:hover{
+		background-color: #FFFFFF;
+	}
+
+	.Search{
+		background-color: #60BEFF;
+		width: 76%;
+		float: left;
+		height: 170px;
+	}
+	.Search1{
+		position: relative;
+		top: 25%;
+		padding-left: 25%;
+	}
+
+	form.example input[type=text] {
+    	padding: 10px;
+    	font-size: 17px;
+    	border: 1px solid grey;
+    	float: left;
+    	width: 50%;
+    	background: #f1f1f1;
+    	height: 40px
+
+	}
+	form.example button {
+    	float: left;
+    	width: 6%;
+    	padding: 20px;
+    	background: #2196F3;
+    	color: white;
+    	font-size: 17px;
+    	border: 1px solid grey;
+    	border-left: none;
+    	cursor: pointer;
+	}
+	.item{
+		width: 24%;
+		float: left;
+		padding:7px;
+		box-sizing: border-box;
+		background-color: #E3E6E7;
+		margin: 5px;
+	}
+	.iimage img{
+		width: 45%;
+		height: auto;
+		float: left;
+	}
+	
+	.Thongtin{
+		padding: 5px 10px;
+		float: right;
+		width: 50%;
+	}
+	.danhmuc{
+		width: 70%;
+	}
+	.Mathang{
+		font-size: 40px;
+	}
+/*admin*/
+	.Home p{
+		position: relative;
+		text-decoration: none;
+		font-size: 20px;
+		top:70% ;
+		padding-left: 20%;
+	}
+	.Sanpham{
+		background-color: #FF0000
+	}
+	.main table{
+
+		width:1000px;
+		height: 100px;
+	}
+
+/*đăng ký*/
+	.dangky2{
+		width: 50%;
+		margin: auto;
+		background-color: #FFFFFF;
+	}
+/*Sửa đổi thông tin sản phẩm*/
+	.Suadoi{
+		width: 60%;
+		margin: auto;
+		background-color: #00FFEA
+	}
+/*Thông tin sản phẩm*/
+	.Chitietsanpham{
+		position: relative;
+		top: 15%;
+		padding-ri: 15%;
+		width: 50%;
+		float: right;
+		padding:10px;
+		box-sizing: border-box;
+		background-color: red;
+	}
+	.Chitietsanpham1{
+		padding-top: 5%;
+		padding-left: 15%;
+		width: 70%;
+		box-sizing: border-box;
+		
+	}
+	.anh img{
+		position: relative;
+		width: 45%;
+		float: left;
+	}
+	
+	.chitiet{
+		background-color: #F6DCDC;
+		padding: 5px 10px;
+		float: right;
+		width: 50%;
+		height: 345px;
+	}
+	.sanphamchitiet{
+		background-color: #EEFFFC;
+		width: 75.5%;
+		float: left;
+		height: 580px;
+
+	}
