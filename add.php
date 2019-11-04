@@ -10,13 +10,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Back to the customer interface</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
 		</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Admin interface</p>
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -37,34 +37,26 @@
 					require_once('./ATNconnector.php');
 					if(isset($_POST['Productid']))
 					{
-						//Get the data posted
-
 						$ID = $_POST['Productid'];
-						// insert data
 						$Images = $_POST['Images'];
-						$Manufacturer = $_POST['Manufacturer'];
 						$Productname = $_POST['Productname'];
-						$Stock = $_POST['Stock'];
 						$Unitprice = $_POST['Unitprice'];
 						$Categoryid = $_POST['Categoryid'];
-						$sql = "INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid) VALUES (". $ID .",'". $Productname ."','". $Manufacturer ."',". $Unitprice .", '". $Images."',   ". $Stock .", ". $Categoryid ." )";
+						$sql = "INSERT INTO product(Productid, Productname, Unitprice, Images,Categoryid) VALUES (". $ID .",'". $Productname ."',". $Unitprice .", '". $Images."',  ". $Categoryid ." )";
 						$sql1 ="SELECT * FROM product WHERE Productid =".$_POST['Productid'];
 						$conn = new ATNconnector();
 						$row = $conn -> runQuery($sql1);
 						if (count($row)>0) {
 							$mess = "Error, ID existed";
-							echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";
-							
+							echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";						
 						} else {
 							$conn -> execStatement($sql);
 							$message = "Product add";
 							echo "<script type='text/javascript'>alert('$message');</script>";
-						}
-						
+						}	
 					}
 					 ?>
-			
-			<div  class="dangky2">
+			<div  class="Register2">
 				<form action="admin.php" method="POST">
 	 				<table  cellspacing="40" cellpadding="0" >
 	 					<tr>
@@ -78,10 +70,7 @@
 	 						<td>Image<SPAN style="color: red">*</SPAN></td>
 	 						<th><input type="text" name="Images" required></th>
 	 						<th></th>
-	 						<td>The number of products <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Stock" required></th>
 	 					</tr>
-
 	 					<tr>
 	 						<td>CategoryId <SPAN style="color: red">*</SPAN></td>
 	 						<th><select name="Categoryid" >
@@ -102,12 +91,11 @@
 	 					<tr><td colspan="5" > Please enter all product information(<SPAN style="color: red">*</SPAN>)</td></tr>
 	 					<tr>
 	 						<th colspan="3" > <input type="submit" value="Add" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px" ></th>
-	 						<th colspan="2" > <a href="https://designweb.herokuapp.com/admin.php"><input type="button" value="Trở lại" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
+	 						<th colspan="2" > <a href="https://thangnd.herokuapp.com/admin.php"><input type="button" value="Back" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
 	 					</tr>
 	 				</table>
 	 				</form>
 			</div>
-		
 		</div>
 	</div>	
 	<div class="footer">
@@ -121,10 +109,8 @@
  			</th>
 			</tr>
 			<tr >
-				<td ><div align="center" style="padding-top:0%, width= 20px" >
-					
-				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>
-				
+				<td ><div align="center" style="padding-top:0%, width= 20px" >	
+				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>		
 			</tr>
 		</table>
 	</div>

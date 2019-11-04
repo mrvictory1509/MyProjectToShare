@@ -10,14 +10,14 @@
 	<div class="header">
 			<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Home</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Home</a></li>
 				<li><a href="">Log in</a></li>
-				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
+				<li><a href="https://thangnd.herokuapp.com/admin.php">Admin</a></li>
 			</ul>
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -37,19 +37,16 @@
 		            $querycategory = "SELECT categoryid, categoryname FROM category";
 		            $total = pg_query($connection,$querycategory);
 		            if (pg_num_rows($total) > 0) {
-		            // output data of each row
 		            while($rowcategory = pg_fetch_assoc($total)) {
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
-		          ?>
-		         <li><a href="ATNdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
+		          ?>   
 		       <?php }} ?>
 			</ul>
 		</div>
 		<div >
 		<?php
 		     include 'ConnectorSQL.php';
-
 		    $queryfirst = "SELECT * from product order by product desc fetch first 9 rows only";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
@@ -58,13 +55,7 @@
 		            $productid = $rowfirst['productid'];
 		            $productname = $rowfirst['productname'];
 		            $unitprice = $rowfirst['unitprice'];
-		            $images = $rowfirst['images'];
-
-				<div class="item">
-					<a href="Information.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
-					</div></a>
-					<div class="Information">	Name: <?= $productname; ?> <br> <br>
-											Price: <?=$unitprice; ?> vnđ <br> <br>
+		            $images = $rowfirst['images'];	
 					</div>
 				</div>
 				<?php
@@ -83,10 +74,8 @@
  			</th>
 			</tr>
 			<tr >
-				<td ><div align="center" style="padding-top:0%, width= 20px" >
-					
+				<td ><div align="center" style="padding-top:0%, width= 20px" >					
 				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>
-				
 			</tr>
 		</table>
 	</div>

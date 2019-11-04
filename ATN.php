@@ -10,13 +10,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Back to the customer interface</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
 		</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Admin interface</p>
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -47,7 +47,7 @@
 		</div>
 		
 		<div >
-			<div class="Mathang">Mặt Hàng Nổi Bật: </div>
+			<div class="Mathang">Hot Items </div>
 			<br>
 
 
@@ -59,24 +59,17 @@
 		    $queryfirst = "SELECT * from product order by product desc fetch first 9 rows only";
 		    $resultfirst = pg_query($connection,$queryfirst);
 		    if (pg_num_rows($resultfirst) > 0) {
-		      // output data of each row
 		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
-
 		            $productid = $rowfirst['productid'];
 		            $productname = $rowfirst['productname'];
 		            $unitprice = $rowfirst['unitprice'];
 		            $images = $rowfirst['images'];
-		            $manufacturer = $rowfirst['manufacturer'];
-		            $stock = $rowfirst['stock'];
 		            ?>
-
 				<div class="item">
 					<a href="Thongtinsanpham.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
 					</div></a>
-					<div class="Thongtin">	Tên Sản Phẩm: <?= $productname; ?> <br> <br>
-											Nhà sản Xuất: <?= $manufacturer; ?>  <br> <br>
-											Giá Sản Phẩm: <?=$unitprice; ?> vnđ <br> <br>
-											Số lượng sản phẩm:<?= $stock; ?>
+					<div class="Thongtin">	ProductName: <?= $productname; ?> <br> <br>			
+											Price: <?=$unitprice; ?> vnđ <br> <br>				
 					</div>
 				</div>
 				<?php
@@ -95,10 +88,8 @@
  			</th>
 			</tr>
 			<tr >
-				<td ><div align="center" style="padding-top:0%, width= 20px" >
-					
-				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>
-				
+				<td ><div align="center" style="padding-top:0%, width= 20px" >		
+				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>		
 			</tr>
 		</table>
 	</div>

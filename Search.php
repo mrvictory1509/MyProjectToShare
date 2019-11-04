@@ -10,16 +10,15 @@
 	<div class="header">
 			<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Home</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Home</a></li>
 				<li><a href="">Check orders</a></li>
 				<li><a href="">Log in</a></li>
-				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">Registration</a></li>
-				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
+				<li><a href="https://thangnd.herokuapp.com/admin.php">Admin</a></li>
 			</ul>
 			</div>
 		 	<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -42,8 +41,7 @@
 		            while($rowcategory = pg_fetch_assoc($total)) {
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
-		          ?>
-		         <li><a href="ATNdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
+		          ?>	       
 		       <?php }} ?>
 			</ul>
 		</div>
@@ -64,19 +62,11 @@
            $productid = $rowproduct['productid'];
            $productname = $rowproduct['productname'];
            $images = $rowproduct['images'];
-         ?>
-				<div class="item">
-					<a href="Information.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
-					</div></a>
-					<div class="Information">	Name: <?= $productname; ?> <br> <br>
-											Price: <?=$unitprice; ?> vnđ <br> <br>
-					</div>
-				</div>
+         ?>	
 				<?php
 			}}
 			?>
 		</div>
-
 	</div>	
 	<div class="footer">
 		<table  cellspacing="0" cellpadding="10" width= 100% align="center" >

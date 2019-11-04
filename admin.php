@@ -15,18 +15,15 @@
 	</script>
 </head>
 <body>
-
 <?php 
 	if (isset($_GET['Productname'])) {
 		require_once('./ATNconnector.php');
 		$conn = new ATNconnector();
-		$sql = "UPDATE `product` SET `Productname`='".$_GET['Productname']."',`Manufacturer`='".$_GET['Manufacturer']."',`Unitprice`='".(int)$_GET['Unitprice']."',`Images`='".$_GET['Images']."',`Stock`='".(int)$_GET['Stock']."',`Categoryid`='".(int)$_GET['Categoryid']."' WHERE Productid = ".$_GET['Productid'];
+		$sql = "UPDATE `product` SET `Productname`='".$_GET['Productname']."',`Unitprice`='".(int)$_GET['Unitprice']."',`Images`='".$_GET['Images']."',`Categoryid`='".(int)$_GET['Categoryid']."' WHERE Productid = ".$_GET['Productid'];
 		$conn -> execStatement($sql);
-	}
-	
+	}	
  ?>
- <?php 
-		
+ <?php 	
 		if(isset($_GET['del']))
 	   {
 	   	require_once('./ATNconnector.php');
@@ -61,19 +58,16 @@
 			}						
 			}
 			?>
-
-		
-
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Back to the customer interface</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
 			</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Admin interface</p>
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -114,7 +108,7 @@
 							
 						<?php } ?>
 
-							<th ><a href="https://designweb.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
+							<th ><a href="https://thangnd.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
 							</th>
 							<th ><a href="admin.php?del=<?php echo $rows[$i][0] ?>"> <input type="button" value="Delete" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" onclick="return Deleteqry(<?php echo $rows[$i][0] ?>);"> </a>
 							</th>
@@ -122,13 +116,9 @@
 				<?php } ?>
 			</table> <br> <br>
 			<div>
-				<b><span style="font-size:20px">Add New Product:</span></b>   <a href="https://designweb.herokuapp.com/add.php"><input type="button" value="Add New Product" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
-			</div>
-			
+				<b><span style="font-size:20px">Add New Product:</span></b>   <a href="https://thangnd.herokuapp.com/add.php"><input type="button" value="Add New Product" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
+			</div>		
 		</div>
-
-
-
 		<div style="margin:50px; padding-left:20%">
 			<b><span style="font-size:20px">List of Customer:</span></b>
 			<br><br><br>
@@ -137,12 +127,7 @@
 					<th>Custid</th>
 					<th>Fullname</th>
 					<th>Address</th>
-					<th>City</th>
-					<th>Country</th>
-					<th>Phone</th>
-					<th>Fax</th>
-					<th >Postalcode</th>
-					<th>Tendangnhap</th>
+					<th>Username</th>
 					<th>Password</th>
 				</tr>
 				<?php 
@@ -163,14 +148,13 @@
 		</div>
 
 		<div style="margin:50px; padding-left:20%">
-			<b><span style="font-size:20px">Danh sách loại sản phẩm:</span></b>
+			<b><span style="font-size:20px">List of Product:</span></b>
 			<br><br><br>
 
 			<table border="1" cellpadding="1" cellspacing="0"  >
 				<tr>
-					<th>Categoryid</th>
-					<th>Categoryname</th>
-					<th>Description</th>
+					<th>CategoryId</th>
+					<th>CategoryName</th>
 					<th >Repair</th>
 					<th>Delete</th>
 				</tr>
@@ -187,7 +171,7 @@
 								<?php echo $rows[$i][$j]?>
 							</th>
 						<?php } ?>
-							<th ><a href="https://designweb.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
+							<th ><a href="https://thangnd.herokuapp.com/Suadoi.php?id=<?php echo $rows[$i][0] ?>"><input type="button" value="Update" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" ></a> 
 							</th>
 							<th ><a href="admin.php?del=<?php echo $rows[$i][0] ?>"> <input type="button" value="Delete" style=" background-color: #FF7302; text-decoration-color: #FFFFFF;" onclick="return Deleteqry(<?php echo $rows[$i][0] ?>);"> </a>
 							</th>
@@ -195,7 +179,7 @@
 				<?php } ?>
 			</table>
 			<div> <br> <br>
-				<b><span style="font-size:20px">Add New Product:</span></b>   <a href="https://designweb.herokuapp.com/addcategory.php"><input type="button" value="Thêm Catedory" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
+				<b><span style="font-size:20px">Add New Product:</span></b>   <a href="https://thangnd.herokuapp.com/addcategory.php"><input type="button" value="Add Catedory" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:25%; height: 30px" ></a> 
 			</div>
 			</form>
 		</div>

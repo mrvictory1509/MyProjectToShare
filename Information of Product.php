@@ -8,28 +8,25 @@
 </head>
 <body>
 	<div class="header">
-			<div class="nava">
+		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Trang chủ</a></li>
-				<li><a href="">Kiểm tra đơn hàng</a></li>
-				<li><a href="">Đăng nhập</a></li>
-				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">đăng ký</a></li>
-				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
-			</div>
-		 	<div class="banner">
+		</div>
+		<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+		 			<p>Admin interface</p>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
-						<form class="example" action="Search.php" method="get">
+						<form class="example" action="/action_page.php">
 		  				<input type="text" placeholder="Search.." name="search">
 		  				<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
 				</div>
-		 	</div>
+		 </div>
 	</div>
 	<div class="main">
 		<div class="navb">
@@ -44,7 +41,6 @@
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
 		          ?>
-		         <li><a href="ATNdetail.php?categoryid=<?= $categoryid; ?>"><?= $categoryname; ?></a></li>
 		       <?php }} ?>
 			</ul>
 		</div>
@@ -54,65 +50,50 @@
 		<?php
 		include 'ConnectorSQL.php';
 		$productid =$_GET['productid'];
-        $queryproduct = "SELECT productid, productname, unitprice, images, stock, manufacturer FROM product WHERE productid = '$productid'";
+        $queryproduct = "SELECT productid, productname, unitprice, images FROM product WHERE productid = '$productid'";
         $result = pg_query($connection,$queryproduct);
 
             if (pg_num_rows($result) > 0) {
             while($rowproduct = pg_fetch_assoc($result)) {
               $productid = $rowproduct['productid'];
               $productname = $rowproduct['productname'];
-              $unitprice = $rowproduct['unitprice'];
               $images = $rowproduct['images'];
-              $stock = $rowproduct['stock'];
-              $manufacturer = $rowproduct['manufacturer'];
         ?>
 				<form action="">
 				<div class="Chitietsanpham1">
 					<div class="anh"><img src="<?= $images; ?>" alt="">
 					</div>
-					<div class="chitiet">	<br>Tên Sản Phẩm: <?= $productname; ?> <br> <br>
-											Nhà sản Xuất: <?= $manufacturer; ?> <br> <br>
+					<div class="chitiet">	<br>ProductName: <?= $productname; ?> <br> <br>
 											<hr> <br>
-											Giá Sản Phẩm: <?= $unitprice; ?> vnđ <br> <br>
-											Số lượng sản phẩm: <?= $stock; ?> <br> <br>
-											Số lượng sản phẩm bạn muốn mua: <input type="number" style="width: 100px;"> <br> <br> <br>
-											<a href=""><input type="button" value="Mua Ngay" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
-											<a href=""><input type="button" value="Thêm vào giỏ hàng" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 15px" ></a>
+											Price: <?= $unitprice; ?> vnđ <br> <br>
+											Number of products you want to buy: <input type="number" style="width: 100px;"> <br> <br> <br>
+											<a href=""><input type="button" value="Buy now" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
+											<a href=""><input type="button" value="Add to cart" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 15px" ></a>
 					</div>
 				</div>
 				</form>
 				<?php
 			}
 			}
-			
-			?>
-			
+			?>	
 		</div>
-		
-
 	</div>	
 	<div class="footer">
 		<table  cellspacing="0" cellpadding="10" width= 100% align="center" >
 			<tr >
-			<th style="font-size: 17px" >ATN_KÊNH MUA SẮM & DỊCH VỤ TRỰC TUYẾN HÀNG ĐẦU VIỆT NAM!</th>
-			<th  rowspan="2" > CÔNG TY TNHH ATN <br>
- 													Giấy CNĐKDN: 289037490 – Ngày cấp: 06/5/2005, được sửa đổi lần thứ 17 ngày 24/7/2017. <br>
- 													Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư hà Nội. <br>
- 													Địa chỉ đăng ký kinh doanh: Tầng 71, Tòa Nhà Keangnam, E6, Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, Hà Nội, Việt Nam <br>  <br><br>    @ATN 2019
+			<th style="font-size: 17px" >ANT_ TOP CHANNELS TO SHOP ONLINE!!!</th>
+			<th  rowspan="2" >ATN CO., LTD<br>
+ 													 Business registration certificate: 245638792 - Date of issue: Oct 10, 2015, amended for the 9th time on Mar 15, 2019. <br>
+ 													Issuing agency: Business Registration Office - Hanoi Department of Planning and Investment. <br>
+ 													Registered business address: 2nd Floor, 152 Nguyen Dinh Hoan, Cau Giay, Hanoi, Vietnam <br>  <br><br>    @ATN 2019
  			</th>
 			</tr>
 			<tr >
-				<td ><div align="center" style="padding-top:0%, width= 20px" >
-					
-				</style>Mua hàng trực tuyến (mua hàng online) mang lại sự tiện lợi, lựa chọn đa dạng hơn và các dịch vụ tốt hơn cho người tiêu dùng, thế nhưng người tiêu dùng Việt Nam vẫn chưa tận hưởng được những tiện ích đó.Chính vì vậy ATN Việt Nam được triển khai với mong muốn trở thành trung tâm mua sắm trực tuyến số 1 tại Việt Nam, nơi bạn có thể chọn lựa mọi thứ để chăm sóc thứ đồ chơi bạn yêu thích.... Chúng tôi có tất cả!</div></td>
-				
-				
+				<td ><div align="center" style="padding-top:0%, width= 20px" >	
+				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>		
 			</tr>
-			
 		</table>
 	</div>
-
-
 </body>
 </html>
 

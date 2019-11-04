@@ -28,45 +28,40 @@ VALUES (9,'Sound Toys');
 CREATE TABLE Product(
    	ProductId int not null,
 	ProductName varchar(40) not null,
-	manufacturer varchar(40) not null,
 	unitprice int not null,
 	images varchar(40) not null,
-	stock int not null,
 	categoryid int references category(categoryid) not null,
    PRIMARY KEY(productid)
 );
-
-
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (1,'Barbie Dreamtopia','img\Barbie1.jpg',100,1);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (2,'Barbie Toy Espisodes','img\Barbie2.jpg',200,1);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (3,'Transformer-shaped Robot','img\Robot1.jpg',150,2);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (4,'Bandai-BX Robot','img\Robot2.jpg',180,2);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (5,'Mcfarlane Toys Call Of Duty','img\Action figures Toys1.jpg',250,3);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (6,'Iron Man','img\Action figures Toys2.jpg',280,3);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (7,'6 Piece Farm Animal Model','img\Animals Toys1.jpg',80,4);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
 VALUES (8,'Zoo Papo','img\Animals Toys2.jpg',160,4);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
 VALUES (9,'Excavator, Trunk and Dump Trucks','img\Construction Toys.jpg',120,5);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (10,'Wooden Toys Cutting Fruit','img\Food-related Toys1.jpg',150,6);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (11,'Fisher-Price Fun With Food','img\Food-related Toys2.jpg',230,6);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (12,'KNex 70 Model','img\Model building Toys1.jpg',270,7);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (13,'Lego Castle Medieval','img\Model building Toys2.jpg',500,7);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (14,'Wood Baby kaleidoscop','img\Science and optical Toys.jpg',400,8);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
 VALUES (15,'Baby Sound Toy','img\Sound Toys1.jpg',20,9);
-INSERT INTO product(ProductId, ProductName, Images, Spice, CategoryId)
-VALUES (15,'Baby Einstein Octopus Orchestra','img\Sound Toys2.jpg',20,9);
-
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
+VALUES (16,'Baby Einstein Octopus Orchestra','img\Sound Toys2.jpg',20,9);

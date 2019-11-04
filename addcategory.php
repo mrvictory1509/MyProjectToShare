@@ -10,13 +10,13 @@
 	<div class="header">
 		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Back to the customer interface</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
 		</div>
 		<div class="banner">
 		 		<div class="Home">
 		 			<p>Admin interface</p>
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
@@ -41,8 +41,7 @@
 					{
 						$Categoryid = $_POST['Categoryid'];
 						$Categoryname = $_POST['Categoryname'];
-						$Description = $_POST['Description'];
-						$sql = "INSERT INTO category(Categoryid, Categoryname, Description) VALUES (". (int)$Categoryid .",'". $Categoryname ."','". $Description ."')";
+						$sql = "INSERT INTO category(Categoryid, Categoryname,) VALUES (". (int)$Categoryid .",'". $Categoryname ."')";
 						$sql1 ="SELECT * FROM category WHERE Categoryid =".$_POST['Categoryid'];
 						$conn = new ATNconnector();
 						$row = $conn -> runQuery($sql1);
@@ -65,22 +64,13 @@
 	 						<td>Categoryid <SPAN style="color: red">*</SPAN></td>
 	 						<th><input type="text" name="Productid" required></th>
 	 					</tr>
-	 					<tr>
-	 						<td>Categoryname <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Manufacturer" required></th>
-	 					</tr>
-	 					<tr>
-	 						<td>Description <SPAN style="color: red">*</SPAN></td>
-	 						<th><input type="text" name="Images" required></th>
-	 					</tr>
 	 					<tr></tr>
 	 					<tr><td colspan="5" >Please enter all product information(<SPAN style="color: red">*</SPAN>)</td></tr>
 	 					<tr></tr>
 	 					<tr>
 	 						<td > <input type="submit" value="Add" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:50%; height: 30px" ></td>
-	 						<th > <a href="https://designweb.herokuapp.com/admin.php"><input type="button" value="Trở lại" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
+	 						<th > <a href="https://thangnd.herokuapp.com/admin.php"><input type="button" value="Back" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:30%; height: 30px"></a></th>
 	 					</tr>
-
 	 				</table>
 	 				</form>
 			</div>
@@ -101,9 +91,7 @@
 			</tr>
 			<tr >
 				<td ><div align="center" style="padding-top:0%, width= 20px" >
-					
 				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>
-				
 			</tr>
 		</table>
 	</div>
