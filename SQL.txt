@@ -1,0 +1,75 @@
+
+CREATE TABLE category(
+   	categoryid int not null,
+	categoryname varchar(100) not null,
+	description  varchar(500) not null,
+   PRIMARY KEY(categoryid)
+);
+
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (1,'Do choi sieu nhan, robot','Do choi thong minh');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (2,'Do choi dieu khien tu xa','Do choi thong minh');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (3,'xep hinh thong minh','Do choi thong minh');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (4,'Cau truot','Do choi van dong');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (5,'Giay truot patin','Do choi van dong');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (6,'Van truot skateboard','Do choi van dong');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (7,'Huong nghiep nhap vai','Do choi giao duc');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (8,'The flash card','Do choi giao duc');
+INSERT INTO category(Categoryid, Categoryname, Description) 
+VALUES (9,'Do choi dat nan, bot nan','Do choi giao duc');
+
+CREATE TABLE product(
+   	productid int not null,
+	productname varchar(40) not null,
+	manufacturer varchar(40) not null,
+	unitprice int not null,
+	images varchar(40) not null,
+	stock int not null,
+	categoryid int references category(categoryid) not null,
+   PRIMARY KEY(productid)
+);
+
+
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(1,'Ro bot bien hinh Transformer','BBT Global',500000,'img\Transformer1.jpg',250,1);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(2,'Robot Bien Hinh Hitomi Hoa Binh Thien Chien','Hitomi',700000,'img\Transformer2.jpg',150,1);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(3,'Robot bien hinh oto Transformer Optimus Prime','Optimus Prime',650000,'img\Transformer3.jpg',100,2);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(4,'Xep hinh hoa qua noi gian','Disney',350000,'img\Xephinh1.jpg',125,3);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(5,'Do go xep hinh','Disney',900000,'img\Xephinh2.jpg',85,3);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(6,'Cau truot Han Quoc','Edu Play',1500000,'img\Cautruot1.jpg',50,4);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(7,'Giay truot Patin Cougar','Cougar',999000,'img\Patin1.jpg',35,5);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(8,'Giay truot patin diseny spiderman','Diseny',999000,'img\Patin2.jpg',25,5);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(9,'Maple Cruiser Van Truot Skateboard Chuyen Nghiep','Maple Cruiser',450000,'img\Vantruot1.jpg',150,6);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(10,'Bo Vali Bac Si Bowa','Bowa',200000,'img\nhapvai1.jpg',30,7);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(11,'Flash card Ekidar 3D Ehon','Ekidar',35000,'img\flashcard.jpg',977,8);
+INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
+VALUES 
+(12,'Dat nan Kiddy Clay 5 mau','Kiddy Clay',45000,'img\Datnan.jpg',999,9);
