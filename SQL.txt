@@ -1,75 +1,67 @@
 
-CREATE TABLE category(
-   	categoryid int not null,
-	categoryname varchar(100) not null,
-	description  varchar(500) not null,
-   PRIMARY KEY(categoryid)
+CREATE TABLE Category(
+   	CategoryId int not null,
+	CategoryName varchar(50) not null,
+   PRIMARY KEY(CategoryId)
 );
 
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (1,'Do choi sieu nhan, robot','Do choi thong minh');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (2,'Do choi dieu khien tu xa','Do choi thong minh');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (3,'xep hinh thong minh','Do choi thong minh');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (4,'Cau truot','Do choi van dong');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (5,'Giay truot patin','Do choi van dong');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (6,'Van truot skateboard','Do choi van dong');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (7,'Huong nghiep nhap vai','Do choi giao duc');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (8,'The flash card','Do choi giao duc');
-INSERT INTO category(Categoryid, Categoryname, Description) 
-VALUES (9,'Do choi dat nan, bot nan','Do choi giao duc');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (1,'Barbie Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (2,'Robot Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (3,'Action figures Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (4,'Animals Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (5,'Construction Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (6,'Food-related Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (7,'Model building Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (8,'Science and optical Toys');
+INSERT INTO Category(CategoryId, CategoryName) 
+VALUES (9,'Sound Toys');
 
-CREATE TABLE product(
-   	productid int not null,
-	productname varchar(40) not null,
-	manufacturer varchar(40) not null,
+
+CREATE TABLE Product(
+   	ProductId int not null,
+	ProductName varchar(40) not null,
 	unitprice int not null,
 	images varchar(40) not null,
-	stock int not null,
 	categoryid int references category(categoryid) not null,
    PRIMARY KEY(productid)
 );
-
-
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(1,'Ro bot bien hinh Transformer','BBT Global',500000,'img\Transformer1.jpg',250,1);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(2,'Robot Bien Hinh Hitomi Hoa Binh Thien Chien','Hitomi',700000,'img\Transformer2.jpg',150,1);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(3,'Robot bien hinh oto Transformer Optimus Prime','Optimus Prime',650000,'img\Transformer3.jpg',100,2);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(4,'Xep hinh hoa qua noi gian','Disney',350000,'img\Xephinh1.jpg',125,3);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(5,'Do go xep hinh','Disney',900000,'img\Xephinh2.jpg',85,3);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(6,'Cau truot Han Quoc','Edu Play',1500000,'img\Cautruot1.jpg',50,4);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(7,'Giay truot Patin Cougar','Cougar',999000,'img\Patin1.jpg',35,5);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(8,'Giay truot patin diseny spiderman','Diseny',999000,'img\Patin2.jpg',25,5);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(9,'Maple Cruiser Van Truot Skateboard Chuyen Nghiep','Maple Cruiser',450000,'img\Vantruot1.jpg',150,6);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(10,'Bo Vali Bac Si Bowa','Bowa',200000,'img\nhapvai1.jpg',30,7);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(11,'Flash card Ekidar 3D Ehon','Ekidar',35000,'img\flashcard.jpg',977,8);
-INSERT INTO product(Productid, Productname, Manufacturer, Unitprice, Images, Stock, Categoryid)
-VALUES 
-(12,'Dat nan Kiddy Clay 5 mau','Kiddy Clay',45000,'img\Datnan.jpg',999,9);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (1,'Barbie Dreamtopia','img\Barbie1.jpg',100,1);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (2,'Barbie Toy Espisodes','img\Barbie2.jpg',200,1);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (3,'Transformer-shaped Robot','img\Robot1.jpg',150,2);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (4,'Bandai-BX Robot','img\Robot2.jpg',180,2);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (5,'Mcfarlane Toys Call Of Duty','img\Action figures Toys1.jpg',250,3);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (6,'Iron Man','img\Action figures Toys2.jpg',280,3);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (7,'6 Piece Farm Animal Model','img\Animals Toys1.jpg',80,4);
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
+VALUES (8,'Zoo Papo','img\Animals Toys2.jpg',160,4);
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
+VALUES (9,'Excavator, Trunk and Dump Trucks','img\Construction Toys.jpg',120,5);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (10,'Wooden Toys Cutting Fruit','img\Food-related Toys1.jpg',150,6);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (11,'Fisher-Price Fun With Food','img\Food-related Toys2.jpg',230,6);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (12,'KNex 70 Model','img\Model building Toys1.jpg',270,7);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (13,'Lego Castle Medieval','img\Model building Toys2.jpg',500,7);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (14,'Wood Baby kaleidoscop','img\Science and optical Toys.jpg',400,8);
+INSERT INTO product(ProductId, ProductName, Images, unitprice, CategoryId)
+VALUES (15,'Baby Sound Toy','img\Sound Toys1.jpg',20,9);
+INSERT INTO product(ProductId, ProductName, Images,unitprice, CategoryId)
+VALUES (16,'Baby Einstein Octopus Orchestra','img\Sound Toys2.jpg',20,9);

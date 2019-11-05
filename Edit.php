@@ -30,31 +30,8 @@
 	<div class="main">
 		<div >
 			<div   style="width:60%; margin: auto;" >
-				<h1>Add New Product</h1>
+				<h1>Edit Information Product</h1>
 			</div>
-				<?php 
-					require_once('./ATNconnector.php');
-					if(isset($_POST['Productid']))
-					{
-						$ID = $_POST['Productid'];
-						$Images = $_POST['Images'];
-						$Productname = $_POST['Productname'];
-						$Unitprice = $_POST['Unitprice'];
-						$Categoryid = $_POST['Categoryid'];
-						$sql = "INSERT INTO product(Productid, Productname, Unitprice, Images,Categoryid) VALUES (". $ID .",'". $Productname ."',". $Unitprice .", '". $Images."',  ". $Categoryid ." )";
-						$sql1 ="SELECT * FROM product WHERE Productid =".$_POST['Productid'];
-						$conn = new ATNconnector();
-						$row = $conn -> runQuery($sql1);
-						if (count($row)>0) {
-							$mess = "Error, ID existed";
-							echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";						
-						} else {
-							$conn -> execStatement($sql);
-							$message = "Product add";
-							echo "<script type='text/javascript'>alert('$message');</script>";
-						}	
-					}
-					 ?>
 			<div  class="Register2">
 				<form action="admin.php" method="POST">
 	 				<table  cellspacing="40" cellpadding="0" >

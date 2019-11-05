@@ -3,33 +3,29 @@
 <head>
 	<title>Home page</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="stylee.css">
 </head>
 <body>
 	<div class="header">
-			<div class="nava">
+		<div class="nava">
 			<ul>
-				<li><a href="https://designweb.herokuapp.com/ATN.php">Trang chủ</a></li>
-				<li><a href="">Kiểm tra đơn hàng</a></li>
-				<li><a href="">Đăng nhập</a></li>
-				<li><a href="https://designweb.herokuapp.com/Dangkykh.php">đăng ký</a></li>
-				<li><a href="https://designweb.herokuapp.com/admin.php">Admin</a></li>
+				<li><a href="https://thangnd.herokuapp.com/ATN.php">Back to the customer interface</a></li>
 			</ul>
-			</div>
-		 	<div class="banner">
+		</div>
+		<div class="banner">
 		 		<div class="Home">
-					<a href="https://designweb.herokuapp.com/ATN.php">ATN Shop</a>
+		 			<p>Admin interface</p>
+					<a href="https://thangnd.herokuapp.com/ATN.php">ATN Shop</a>
 				</div>
 				<div class="Search">
 					<div class="Search1">
-						<form class="example" action="Search.php" method="get">
+						<form class="example" action="/action_page.php">
 		  				<input type="text" placeholder="Search.." name="search">
 		  				<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
 				</div>
-		 	</div>
+		 </div>
 	</div>
 	<div class="main">
 		<div class="navb">
@@ -39,7 +35,6 @@
 		            $querycategory = "SELECT categoryid, categoryname FROM category";
 		            $total = pg_query($connection,$querycategory);
 		            if (pg_num_rows($total) > 0) {
-		            // output data of each row
 		            while($rowcategory = pg_fetch_assoc($total)) {
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
@@ -54,24 +49,19 @@
 		          $categoryid = $_GET['categoryid'];
 		            $querycategory = "SELECT * FROM category WHERE categoryid = $categoryid";
 		            $total = pg_query($connection,$querycategory);
-		            if (pg_num_rows($total) > 0) {
-		            // output data of each row
+		            if (pg_num_rows($total) > 0) 
 		            while($rowcategory = pg_fetch_assoc($total)) {
 		              $categoryid = $rowcategory['categoryid'];
 		              $categoryname = $rowcategory['categoryname'];
 		          ?>
 					<b style="font-size: 30px;"><a style="text-decoration: none; color: black;"  href="ATNdetail.php?categoryid= <?= $categoryid; ?> "><?= $categoryname; ?></a></b>
-
 				<?php 
 					}}
 				?>
 		</div>
-
-
 		<div >
 			<br>
 		<?php
-
 		     include 'ConnectorSQL.php';
 		     $categoryid = $_GET['categoryid'];
 		    $queryfirst = "SELECT * FROM product where categoryid = $categoryid ";
@@ -79,15 +69,11 @@
 		    if (pg_num_rows($resultfirst) > 0) {
 		      // output data of each row
 		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
-
 		            $productid = $rowfirst['productid'];
 		            $productname = $rowfirst['productname'];
 		            $unitprice = $rowfirst['unitprice'];
 		            $images = $rowfirst['images'];
-		            $manufacturer = $rowfirst['manufacturer'];
-		            $stock = $rowfirst['stock'];
 		            ?>
-
 				<div class="item">
 					<a href="Thongtinsanpham.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
 					</div></a>
@@ -120,4 +106,3 @@
 	</div>
 </body>
 </html>
-

@@ -1,6 +1,6 @@
 <?php
 
-$connection = pg_connect("host=ec2-54-221-198-156.compute-1.amazonaws.com port=5432 dbname=dcvm369d6sl8tr user=tpxgiylnxuuodr password=3c1187366d0ec071c50a6b23f08463c7cf5c0e83b0d8304df3d6d76ac0bff16e");  
+$connection = pg_connect("host=ec2-54-83-9-169.compute-1.amazonaws.com port=5432 dbname=d8gn6j9s6ca5s2 user=zffjsuxdpjjeiq password=9d8a0239c339ddb0a503537b35742b8146f2f302e2988d1a83e82c86918a52dd");  
  if(!$connection) {
      die("Database connection failed");
  }

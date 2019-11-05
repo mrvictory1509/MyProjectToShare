@@ -35,47 +35,47 @@
 		            $querycategory = "SELECT categoryid, categoryname FROM category";
 		            $total = pg_query($connection,$querycategory);
 		            if (pg_num_rows($total) > 0) {
-		            // output data of each row
 		            while($rowcategory = pg_fetch_assoc($total)) {
-		              $id_categorydb = $rowcategory['categoryid'];
-		              $name_category = $rowcategory['categoryname'];
+		              $categoryid = $rowcategory['categoryid'];
+		              $categoryname = $rowcategory['categoryname'];
 		          ?>
-		         <li><a href="ATNdetail.php?categoryid=<?= $categoryid; ?>"><?= $name_category; ?></a></li>
 		       <?php }} ?>
 			</ul>
 		</div>
-		
-		<div >
-			<div class="Mathang">Hot Items </div>
-			<br>
 
-
+		<div class="sanphamchitiet">
 
 		<?php
+		include 'ConnectorSQL.php';
+		$productid =$_GET['productid'];
+        $queryproduct = "SELECT productid, productname, unitprice, images FROM product WHERE productid = '$productid'";
+        $result = pg_query($connection,$queryproduct);
 
-		     include 'ConnectorSQL.php';
-
-		    $queryfirst = "SELECT * from product order by product desc fetch first 9 rows only";
-		    $resultfirst = pg_query($connection,$queryfirst);
-		    if (pg_num_rows($resultfirst) > 0) {
-		      while($rowfirst = pg_fetch_assoc($resultfirst)) {
-		            $productid = $rowfirst['productid'];
-		            $productname = $rowfirst['productname'];
-		            $unitprice = $rowfirst['unitprice'];
-		            $images = $rowfirst['images'];
-		            ?>
-				<div class="item">
-					<a href="Thongtinsanpham.php?productid=<?= $productid;  ?>"><div class="iimage"><img src="<?= $images; ?>" alt="">
-					</div></a>
-					<div class="Thongtin">	ProductName: <?= $productname; ?> <br> <br>			
-											Price: <?=$unitprice; ?> vnđ <br> <br>				
+            if (pg_num_rows($result) > 0) {
+            while($rowproduct = pg_fetch_assoc($result)) {
+              $productid = $rowproduct['productid'];
+              $productname = $rowproduct['productname'];
+              $images = $rowproduct['images'];
+        ?>
+				<form action="">
+				<div class="Chitietsanpham1">
+					<div class="anh"><img src="<?= $images; ?>" alt="">
+					</div>
+					<div class="chitiet">	<br>ProductName: <?= $productname; ?> <br> <br>
+											<hr> <br>
+											Price: <?= $unitprice; ?> vnđ <br> <br>
+											Number of products you want to buy: <input type="number" style="width: 100px;"> <br> <br> <br>
+											<a href=""><input type="button" value="Buy now" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 20px" ></a>
+											<a href=""><input type="button" value="Add to cart" style=" background-color: #FF7302; text-decoration-color: #FFFFFF; width:40%; height: 30px; margin: 15px" ></a>
 					</div>
 				</div>
+				</form>
 				<?php
-			}}
-			?>
+			}
+			}
+			?>	
 		</div>
-	</div>		
+	</div>	
 	<div class="footer">
 		<table  cellspacing="0" cellpadding="10" width= 100% align="center" >
 			<tr >
@@ -87,7 +87,7 @@
  			</th>
 			</tr>
 			<tr >
-				<td ><div align="center" style="padding-top:0%, width= 20px" >		
+				<td ><div align="center" style="padding-top:0%, width= 20px" >	
 				</style>Buying goods online brings convenience, more diverse options and better services to consumers. That's why ATN Vietnam was launched with the desire to become the number 1 online shopping center in Vietnam, where you can choose everything to take care of your favorite toys .... All there in us!</div></td>		
 			</tr>
 		</table>
